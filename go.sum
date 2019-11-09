@@ -8,7 +8,5 @@ github.com/gorilla/mux v1.7.3 h1:gnP5JzjVOuiZD07fKKToCAOjS0yOpj/qPETTXCCS6hw=
 github.com/gorilla/mux v1.7.3/go.mod h1:1lud6UwP+6orDFRuTfBEV8e9/aOM/c4fVVCaMa2zaAs=
 github.com/samitpal/goProbe v0.5.1 h1:328r8Bbj1natDYVbAU6bFrF/3LoCTaqpZr6NlXSDzRA=
 github.com/samitpal/goProbe v0.5.1/go.mod h1:PL3v/2Eini5zhB/u3LRAHMRhZtBxDcICcVpHJOIF69k=
-github.com/samitpal/simple-sso v0.0.0-20160815112803-72eb3da9990a h1:Cz8E3XDuWhiz79ClWi9guEf6S0zKotG84wDoTr0/moU=
-github.com/samitpal/simple-sso v0.0.0-20160815112803-72eb3da9990a/go.mod h1:IQB4u4RjDv6aXqucOp/LtZduqjmIbjLm8qN1gDTS/6E=
 gopkg.in/ldap.v2 v2.5.1 h1:wiu0okdNfjlBzg6UWvd1Hn8Y+Ux17/u/4nlk4CQr6tU=
 gopkg.in/ldap.v2 v2.5.1/go.mod h1:oI0cpe/D7HRtBQl8aTg+ZmzFUAvu4lsv3eLXMLGFxWk=

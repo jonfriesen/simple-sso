@@ -16,7 +16,7 @@ var (
 // SSOImplementer is what it needs to be implemented for sso functionality.
 type SSOer interface {
 	// Auth takes user,password strings as arguments and returns the user, user roles (e.g ldap groups)
-	// (string slice) if the call succeds. Auth should return the ErrUnAuthorized or ErrUserNotFound error if
+	// (string slice) if the call succeeds. Auth should return the ErrUnAuthorized or ErrUserNotFound error if
 	// auth fails or if the user is not found respectively.
 	Auth(string, string) (*string, *[]string, error)
 	// CTValidHours returns the cookie/jwt token validity in hours.

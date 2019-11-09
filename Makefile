@@ -22,8 +22,11 @@ cover: test
 	@go tool cover -html=coverage.txt
 .PHONY: cover
 
-run:
+run-oldap:
 	@go run cmd/simple-sso-oldap/*
+
+run-inmem:
+	@go run cmd/simple-sso-inmem/*
 
 run-example:
 	@go run example_app/main.go

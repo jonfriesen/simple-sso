@@ -16,8 +16,12 @@ import (
 var parsedPubKey *rsa.PublicKey
 
 func init() {
-	key, _ := ioutil.ReadFile("../key_pair/sso_public.crt") // this is the public key of the login (simple-sso) server
+	key, _ := ioutil.ReadFile("key_pair/sso_public.crt") // this is the public key of the login (simple-sso) server
+	if key == nil {
+		panic("could not find certificate")
+	}
 	parsedPubKey, _ = jwt.ParseRSAPublicKeyFromPEM(key)
+
 }
 
 func cookieCheck(w http.ResponseWriter, r *http.Request) {
