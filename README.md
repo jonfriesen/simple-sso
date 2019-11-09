@@ -10,7 +10,15 @@ simple-sso also has a form of authorization capabilities. It can optionally pack
 
 They say a picture is thousand times more effective, so here is a diagram which shows traffic flow with simple-sso.
 
-![alt tag](https://docs.google.com/drawings/d/1blQbqjT4lb0nu_lX-WO2OaQPvhg5I2pF0LvPZnQ9ywA/pub?w=960&h=720)
+![alt tag](docs/images/sso-workflow.png)
+
+Usage
+-------------------
+For a simple in-memory SSO server with a hardcoded user (alice/password123)
+- run `make setup`
+- run `make run-inmem`
+
+This will generate self-signed SSL and SSL certificates located in `ssl_certs/` and `key_pair/` respectively.
 
 Installation
 -------------------
@@ -56,3 +64,7 @@ Caveats
 * Since time is of essence in this infrastructure, the server time needs to be set and managed correctly.
 * Communication between this service and the ldap infrastruture should be encrypted.
 * This has been tested with openldap.
+
+Side Note
+------------------
+This project was originaly created by [@samitpal](https://github.com/samitpal/simple-sso) and has been updated by myself to offer Go Modules support and an easier implementation for testing SSO consumer apps with.

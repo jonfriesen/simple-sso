@@ -7,6 +7,7 @@ tidy:
 .PHONY: ensure
 
 setup: generate_certs
+	@go generate ./...
 	@go get -u github.com/jteeuwen/go-bindata/...
 .PHONY: setup
 
