@@ -3,19 +3,20 @@ package main
 import (
 	"crypto/rsa"
 	"fmt"
-	jwt "github.com/dgrijalva/jwt-go"
-	"github.com/gorilla/mux"
-	"github.com/samitpal/simple-sso/util"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"strings"
+
+	jwt "github.com/dgrijalva/jwt-go"
+	"github.com/gorilla/mux"
+	"github.com/jonfriesen/simple-sso/pkg/util"
 )
 
 var parsedPubKey *rsa.PublicKey
 
 func init() {
-	key, _ := ioutil.ReadFile("../key_pair/demo.rsa.pub") // this is the public key of the login (simple-sso) server
+	key, _ := ioutil.ReadFile("../key_pair/sso_public.crt") // this is the public key of the login (simple-sso) server
 	parsedPubKey, _ = jwt.ParseRSAPublicKeyFromPEM(key)
 }
 
@@ -85,13 +86,13 @@ func authTokCheck(w http.ResponseWriter, r *http.Request) {
 	return
 }
 func main() {
-	log.Println("Starting app server.")
+	log.Println("Starting example app server at https://localhost:8082")
 	r := mux.NewRouter()
 	r.HandleFunc("/cookie", cookieCheck)
 	r.HandleFunc("/auth_token", authTokCheck)
 
 	http.Handle("/", r)
-	err := http.ListenAndServeTLS(":8082", "../ssl_certs/cert.pem", "../ssl_certs/key.pem", nil)
+	err := http.ListenAndServeTLS(":8082", "ssl_certs/ssl_public.crt", "ssl_certs/ssl_private.key", nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}

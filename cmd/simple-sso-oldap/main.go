@@ -1,20 +1,21 @@
 package main
 
-//go:generate go-bindata templates/...
+//go:generate go-bindata ../../templates/...
 
 import (
 	"fmt"
-	"github.com/gorilla/handlers"
-	"github.com/gorilla/mux"
-	weblog "github.com/samitpal/goProbe/log"
 	"html/template"
 	"log"
 	"net/http"
 	"os"
 	"time"
 
-	"github.com/samitpal/simple-sso/ldap"
-	"github.com/samitpal/simple-sso/sso"
+	"github.com/gorilla/handlers"
+	"github.com/gorilla/mux"
+	weblog "github.com/samitpal/goProbe/log"
+
+	"github.com/jonfriesen/simple-sso/pkg/providers/ldap"
+	"github.com/jonfriesen/simple-sso/pkg/sso"
 )
 
 var lsso sso.SSOer
@@ -55,7 +56,7 @@ func handleSSOGetRequest(w http.ResponseWriter, r *http.Request) {
 		err = true
 	}
 	tmplData := TmplData{QueryString: r.URL.Query().Get("s_url"), Error: err}
-	renderTemplate(w, "templates/login.html", &tmplData)
+	renderTemplate(w, "../../templates/login.html", &tmplData)
 }
 
 // handleSSOPostRequest sets the sso cookie.
@@ -129,7 +130,7 @@ func handleTestRequest(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	log.Println("Starting login server.")
+	log.Println("Starting login server at https://localhost:8081")
 	r := mux.NewRouter()
 
 	var fh *os.File

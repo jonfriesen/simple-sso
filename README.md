@@ -1,7 +1,3 @@
-[![Build Status](https://travis-ci.org/samitpal/simple-sso.svg?branch=master)](https://travis-ci.org/samitpal/simple-sso)
-
-[google group](https://groups.google.com/forum/#!forum/simple-sso)
-
 Summary
 ------------------
 simple-sso is an SSO service with support for roles based authorization written in the Go programming language. 
@@ -23,7 +19,7 @@ Installation
 ```sh
 $ go get -u github.com/jteeuwen/go-bindata/...
 
-$ go get -u github.com/samitpal/simple-sso/...
+$ go get -u github.com/jonfriesen/simple-sso/...
 
 $ export PATH=$PATH:$GOPATH/bin
 

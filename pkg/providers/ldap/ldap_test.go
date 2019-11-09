@@ -1,17 +1,18 @@
 package ldap
 
 import (
-	"github.com/samitpal/simple-sso/sso"
 	"net/http"
 	"os"
 	"reflect"
 	"strconv"
 	"testing"
 	"time"
+
+	"github.com/jonfriesen/simple-sso/pkg/sso"
 )
 
 func init() {
-	os.Setenv(sso.ConfMap["sso_private_key_path"], "../util/test/test_key.pem")
+	os.Setenv(sso.ConfMap["sso_private_key_path"], "../../util/test/test_key.pem")
 }
 
 func TestBuildCookie(t *testing.T) {

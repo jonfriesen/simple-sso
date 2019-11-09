@@ -10,8 +10,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/samitpal/simple-sso/sso"
-	"github.com/samitpal/simple-sso/util"
+	"github.com/jonfriesen/simple-sso/pkg/sso"
+	"github.com/jonfriesen/simple-sso/pkg/util"
 )
 
 type LdapSSO struct {

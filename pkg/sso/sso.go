@@ -80,9 +80,9 @@ type BaseConfig struct {
 
 // SetupBaseConfig function setups some generic configs
 func SetupBaseConfig() (*BaseConfig, error) {
-	sslCertPath := setDefaultString(os.Getenv(ConfMap["sso_ssl_cert_path"]), "ssl_certs/cert.pem")
-	sslKeyPath := setDefaultString(os.Getenv(ConfMap["sso_ssl_key_path"]), "ssl_certs/key.pem")
-	privateKeyPath := setDefaultString(os.Getenv(ConfMap["sso_private_key_path"]), "key_pair/demo.rsa")
+	sslCertPath := setDefaultString(os.Getenv(ConfMap["sso_ssl_cert_path"]), "ssl_certs/ssl_public.crt")
+	sslKeyPath := setDefaultString(os.Getenv(ConfMap["sso_ssl_key_path"]), "ssl_certs/ssl_private.key")
+	privateKeyPath := setDefaultString(os.Getenv(ConfMap["sso_private_key_path"]), "key_pair/sso_private.key")
 	weblogDir := setDefaultString(os.Getenv(ConfMap["sso_weblog_dir"]), "")
 	userRoles, err := strconv.ParseBool(setDefaultString(os.Getenv(ConfMap["sso_user_roles"]), "false"))
 	if err != nil {

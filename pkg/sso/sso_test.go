@@ -24,9 +24,9 @@ func TestSetupDefaultString(t *testing.T) {
 
 func TestSetupBaseConfig(t *testing.T) {
 	expBaseConfig := BaseConfig{
-		"ssl_certs/cert.pem",
-		"ssl_certs/key.pem",
-		"key_pair/demo.rsa",
+		"ssl_certs/ssl_public.crt",
+		"ssl_certs/ssl_private.key",
+		"key_pair/sso_private.key",
 		"",
 		false,
 	}

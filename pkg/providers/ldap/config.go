@@ -9,7 +9,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/samitpal/simple-sso/sso"
+	"github.com/jonfriesen/simple-sso/pkg/sso"
 )
 
 var PrivateKey *rsa.PrivateKey

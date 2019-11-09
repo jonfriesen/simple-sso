@@ -1,7 +1,7 @@
 package ldap
 
 import (
-	"github.com/samitpal/simple-sso/sso"
+	"github.com/jonfriesen/simple-sso/pkg/sso"
 	"os"
 	"reflect"
 	"testing"
